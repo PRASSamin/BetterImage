@@ -14,9 +14,9 @@
 Install `betterimage` using npm or yarn:
 
 ```bash
-npm install betterimage
+npm install @prass/betterimage
 # or
-yarn add betterimage
+yarn add @prass/betterimage
 ```
 
 ## Usage
@@ -26,7 +26,7 @@ yarn add betterimage
 ### Pre-built Component
 
 ```tsx
-import { BetterImage } from "better-image";
+import { BetterImage } from "@prass/betterimage/components";
 
 export default function Example() {
   return (
@@ -56,8 +56,8 @@ export default function Example() {
 `BetterImage` is highly customizable. You can create your own components based on your project needs.
 
 ```tsx
-import * as BetterThings from "betterimage";
-import pras from "betterimage/lib";
+import * as BetterThings from "@prass/betterimage";
+import { pras } from "@prass/betterimage/lib";
 
 const BetterVersion = React.forwardRef(({ className, ...props }, ref) => (
   <BetterThings.Root
@@ -111,7 +111,7 @@ BetterImage simplifies image handling in your Next.js projects with:
 
 ## License
 
-This project is licensed under the [MIT License](LICENSE).
+This project is licensed under the [MIT License](LICENSE.md).
 
 ## Contributing
 

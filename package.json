@@ -1,13 +1,22 @@
 {
-  "name": "betterimage",
+  "name": "@prass/betterimage",
   "version": "1.0.1",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
   "exports": {
-    "./components": "./dist/components.mjs",
-    "./lib": "./dist/lib.mjs",
-    ".": "./dist/index.mjs"
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    },
+    "./components": {
+      "import": "./dist/components.mjs",
+      "require": "./dist/components.js"
+    },
+    "./lib": {
+      "import": "./dist/lib.mjs",
+      "require": "./dist/lib.js"
+    }
   },
   "files": [
     "dist"
@@ -18,6 +27,7 @@
   },
   "keywords": [
     "next.js",
+    "react",
     "image",
     "optimization",
     "animation",
