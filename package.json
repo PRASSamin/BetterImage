@@ -1,0 +1,43 @@
+{
+  "name": "betterimage",
+  "version": "1.0.1",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "exports": {
+    "./components": "./dist/components.mjs",
+    "./lib": "./dist/lib.mjs",
+    ".": "./dist/index.mjs"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "build:watch": "tsup --watch"
+  },
+  "keywords": [
+    "next.js",
+    "image",
+    "optimization",
+    "animation",
+    "betterimage",
+    "pras"
+  ],
+  "author": "PRAS Samin",
+  "repository": "https://github.com/PRASSamin/betterimage",
+  "homepage": "https://github.com/PRASSamin/betterimage",
+  "license": "MIT",
+  "description": "BetterImage is a Next.js-focused library for building optimized image components with advanced features, including fallback animations. It enhances Next.js's built-in Image component, offering seamless optimization and an improved user experience for your projects.",
+  "dependencies": {
+    "next": "^15.1.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "22.10.2",
+    "@types/react": "^19.0.1",
+    "tsup": "^8.3.5",
+    "typescript": "^5.7.2"
+  }
+}
