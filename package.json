@@ -25,8 +25,8 @@
     "pras"
   ],
   "author": "PRAS Samin",
-  "repository": "https://github.com/PRASSamin/betterimage",
-  "homepage": "https://github.com/PRASSamin/betterimage",
+  "repository": "https://github.com/PRASSamin/BetterImage",
+  "homepage": "https://github.com/PRASSamin/BetterImage",
   "license": "MIT",
   "description": "BetterImage is a Next.js-focused library for building optimized image components with advanced features, including fallback animations. It enhances Next.js's built-in Image component, offering seamless optimization and an improved user experience for your projects.",
   "dependencies": {
