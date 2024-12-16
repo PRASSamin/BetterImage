@@ -45,4 +45,4 @@ jspm_packages
 .vercel/output
 
 dist
-testingpackage
+package

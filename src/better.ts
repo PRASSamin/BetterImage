@@ -12,7 +12,7 @@ const R = React.forwardRef<HTMLDivElement, RProps>(({ ...props }, ref) => {
 
   return jsx(BetterContext.Provider, {
     value: { imageStatus, setImageStatus },
-    children: jsx("div", { ...props, ref, "data-status": imageStatus }),
+    children: jsx("div", { ...props, ref }),
   });
 });
 R.displayName = "BetterVersion";
@@ -79,8 +79,9 @@ const useImageStatus = (src: string) => {
     };
 
     setImageStatus("loading");
+    image.crossOrigin = "anonymous";
     image.onload = updateStatus("loaded");
-    image.onerror = updateStatus("error");
+    image.onerror = updateStatus("loaded");
     image.src = src;
 
     return () => {
