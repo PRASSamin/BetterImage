@@ -1,9 +1,9 @@
 "use client";
 
 import * as React from "react";
-import * as BetterThings from "@/index";
+import * as BetterThings from "../../index";
 import { jsx } from "react/jsx-runtime";
-import { pras } from "@/lib/utils";
+import { pras } from "../../lib/utils";
 import Loader from "./svg/Loader";
 
 const BetterVersion = React.forwardRef<

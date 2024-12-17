@@ -1,13 +1,17 @@
 "use client";
+import React from "react";
 
-type Props = { size: number };
+type SVGProps = React.ComponentPropsWithoutRef<"svg"> & {
+  size?: number;
+}
 
-const Loader = (props: Props) => {
+const Loader = React.forwardRef<SVGElement, SVGProps>(({ size, ...props }, ref) => {
   return (
     <svg
+      {...props}
       xmlns="http://www.w3.org/2000/svg"
-      width={props.size || "24"}
-      height={props.size || "24"}
+      width={size || 24}
+      height={size || 24}
       viewBox="0 0 24 24"
       fill="none"
       stroke="currentColor"
@@ -25,6 +29,6 @@ const Loader = (props: Props) => {
       <path d="m4.9 4.9 2.9 2.9" />
     </svg>
   );
-};
+})
 
 export default Loader;

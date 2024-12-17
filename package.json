@@ -1,21 +1,39 @@
 {
   "name": "@prass/betterimage",
-  "version": "1.0.2",
-  "main": "dist/index.js",
-  "module": "dist/index.js",
-  "types": "index.d.ts",
+  "version": "1.0.3",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./index.d.ts",
   "exports": {
     ".": {
-      "import": "./dist/index.mjs",
-      "require": "./dist/index.js"
+      "import": {
+        "types": "./index.d.mts",
+        "default": "./dist/index.mjs"
+      },
+      "require": {
+        "types": "./index.d.ts",
+        "default": "./dist/index.js"
+      }
     },
     "./components": {
-      "import": "./dist/components.mjs",
-      "require": "./dist/components.js"
+      "import": {
+        "types": "./components.d.mts",
+        "default": "./dist/components.mjs"
+      },
+      "require": {
+        "types": "./components.d.ts",
+        "default": "./dist/components.js"
+      }
     },
     "./lib": {
-      "import": "./dist/lib.mjs",
-      "require": "./dist/lib.js"
+      "import": {
+        "types": "./lib.d.mts",
+        "default": "./dist/lib.mjs"
+      },
+      "require": {
+        "types": "./lib.d.ts",
+        "default": "./dist/lib.js"
+      }
     }
   },
   "files": [
@@ -60,6 +78,7 @@
   "devDependencies": {
     "@types/node": "22.10.2",
     "@types/react": "^19.0.1",
+    "@types/react-dom": "^19.0.2",
     "typescript": "^5.7.2"
   }
 }
