@@ -44,7 +44,7 @@ type IProps = React.ComponentPropsWithoutRef<typeof Image>;
  * Otherwise, it renders nothing.
  */
 const I = React.forwardRef<HTMLImageElement, IProps>(({ ...props }, ref) => {
-  const imageStatus = useImageStatus(props.src as string, props);
+  const imageStatus = useImageStatus(props);
 
   return (
     imageStatus === "loaded" &&
@@ -109,11 +109,11 @@ F.displayName = "Fallback";
  * This hook uses the `useBetter` hook to determine the status of the image.
  * It returns the current status of the image.
  */
-const useImageStatus = (src: string, props?: IProps) => {
+const useImageStatus = (ImageProps?: IProps) => {
   const { imageStatus, setImageStatus } = useBetter();
 
   React.useEffect(() => {
-    if (!src) {
+    if (!ImageProps?.src) {
       setImageStatus("error");
       return;
     }
@@ -124,7 +124,7 @@ const useImageStatus = (src: string, props?: IProps) => {
     tempImageDiv.style.cssText =
       "position: absolute; visibility: hidden; top: -9999px; left: -9999px;";
     document.body.appendChild(tempImageDiv);
-      
+
     const tempImageRoot = createRoot(tempImageDiv);
 
     const handleComplete = () => {
@@ -146,10 +146,8 @@ const useImageStatus = (src: string, props?: IProps) => {
 
     tempImageRoot.render(
       jsx(Image, {
-        src,
-        alt: "temporary preload",
-        width: props?.width || 1,
-        height: props?.height || 1,
+        ...ImageProps,
+        alt: Math.random().toString(),
         onLoad: handleComplete,
         onError: handleError,
         priority: true,
@@ -159,7 +157,7 @@ const useImageStatus = (src: string, props?: IProps) => {
     return () => {
       cleanup();
     };
-  }, [src, setImageStatus]);
+  }, [ImageProps?.src, setImageStatus]);
 
   return imageStatus;
 };
